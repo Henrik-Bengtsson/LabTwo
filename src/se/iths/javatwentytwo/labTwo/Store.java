@@ -383,5 +383,5 @@ public class Store {
             return new ArrayList<>();
         }
     }
-    
+
 }
