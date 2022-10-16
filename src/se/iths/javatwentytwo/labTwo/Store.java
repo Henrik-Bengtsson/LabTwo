@@ -8,7 +8,6 @@ import java.math.BigDecimal;
 import java.nio.file.Files;
 import java.nio.file.NoSuchFileException;
 import java.nio.file.Path;
-import java.nio.file.StandardOpenOption;
 import java.util.ArrayList;
 import java.util.Arrays;
 import java.util.List;
@@ -356,8 +355,9 @@ public class Store {
         String json = gson.toJson(shoppingCart);
 
         String homeFolder = System.getProperty("user.home");
+
         try {
-            Files.writeString(Path.of(homeFolder, "recipe.json"), json, StandardOpenOption.APPEND);
+            Files.writeString(Path.of(homeFolder, "recipe.json"), json);
             System.out.println("Filen är sparad");
         } catch (IOException e) {
             System.out.println("Något gick fel vid sparandet");
@@ -383,5 +383,4 @@ public class Store {
             return new ArrayList<>();
         }
     }
-
 }
