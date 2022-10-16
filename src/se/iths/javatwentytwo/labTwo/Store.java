@@ -55,6 +55,7 @@ public class Store {
                         2. Sök (ta bort, ändra produkt)
                         3. Spara
                         4. Handla
+                        5. Skriv ut alla produkter
                         e. Avsluta""");
     }
 
