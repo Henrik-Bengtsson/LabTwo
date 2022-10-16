@@ -65,7 +65,7 @@ public class Store {
                 printSearchMenu();
                 switch (scanner.next()) {
                     case "1" -> searchOnName(scanner, productList);
-                    case "2" -> searchOnBalanceRange(scanner, productList);
+                    case "2" -> searchOnBalance(scanner, productList);
                     case "3" -> searchOnPriceRange(scanner, productList);
                     case "4" -> searchOnCategory(scanner, productList);
                     case "5" -> searchOnMaker(scanner, productList);
@@ -87,7 +87,7 @@ public class Store {
                         ----------------
                         Sök på
                         1. Produkt namn
-                        2. Saldo
+                        2. Saldo och lägre än
                         3. Prisintervall
                         4. Kategori
                         5. Tillverkare
@@ -217,10 +217,10 @@ public class Store {
                 .forEach(System.out::println);
     }
 
-    private static void searchOnBalanceRange(Scanner scanner, List<Product> productList){
+    private static void searchOnBalance(Scanner scanner, List<Product> productList){
         int balanceToSearch = inputProductBalance(scanner);
         productList.stream()
-                .filter(product -> product.getProductBalance() == balanceToSearch)
+                .filter(product -> product.getProductBalance() <= balanceToSearch)
                 .forEach(System.out::println);
     }
 
